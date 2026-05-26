@@ -17,18 +17,20 @@ box-sizing:border-box;
 }
 
 body{
-background:#f8efe7;
+background:linear-gradient(to bottom,#f8efe7,#fce8e6);
 font-family:'Poppins',sans-serif;
 overflow-x:hidden;
 color:#3d2c2c;
 }
 
+/* floating hearts */
+
 .hearts{
 position:fixed;
 width:100%;
 height:100%;
-pointer-events:none;
 overflow:hidden;
+pointer-events:none;
 z-index:1;
 }
 
@@ -60,44 +62,37 @@ opacity:0;
 }
 }
 
+/* lock screen */
+
 .lock-screen{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-flex-direction:column;
-text-align:center;
 padding:20px;
 position:relative;
 z-index:2;
 }
 
 .lock-box{
-background:rgba(255,255,255,0.6);
-padding:35px;
+background:rgba(255,255,255,0.65);
+padding:40px 30px;
 border-radius:30px;
-backdrop-filter:blur(10px);
-box-shadow:0 8px 30px rgba(0,0,0,0.08);
-max-width:350px;
+backdrop-filter:blur(12px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+max-width:360px;
 width:100%;
+text-align:center;
+animation:fade 1.5s ease;
 }
 
-.lock-screen img{
-width:220px;
-height:280px;
-object-fit:cover;
-border-radius:20px;
-margin-bottom:25px;
-box-shadow:0 8px 25px rgba(0,0,0,0.1);
-}
-
-.lock-screen h1{
+.lock-box h1{
 font-family:'Caveat',cursive;
-font-size:65px;
+font-size:68px;
 margin-bottom:10px;
 }
 
-.lock-screen p{
+.lock-box p{
 font-size:16px;
 margin-bottom:25px;
 }
@@ -107,11 +102,11 @@ width:100%;
 padding:15px;
 border:none;
 border-radius:20px;
-margin-bottom:20px;
 outline:none;
 font-size:18px;
 text-align:center;
-background:#fff;
+margin-bottom:20px;
+background:white;
 }
 
 button{
@@ -129,12 +124,14 @@ button:hover{
 transform:scale(1.05);
 }
 
+/* hidden main */
+
 .hidden{
 display:none;
 }
 
 .main{
-padding:30px 20px;
+padding:40px 20px;
 position:relative;
 z-index:2;
 animation:fade 1.5s ease;
@@ -151,86 +148,83 @@ transform:translateY(0);
 }
 }
 
+/* hero */
+
 .hero{
 text-align:center;
-margin-bottom:35px;
+margin-bottom:40px;
 }
 
 .hero h2{
 font-family:'Caveat',cursive;
-font-size:70px;
+font-size:75px;
 line-height:1;
 }
 
 .hero p{
 margin-top:10px;
-font-size:17px;
+font-size:18px;
 }
+
+/* note */
 
 .note{
 background:#fffaf7;
-padding:30px;
-border-radius:25px;
+padding:35px;
+border-radius:30px;
 max-width:700px;
 margin:0 auto;
-line-height:1.9;
+line-height:2;
 font-size:18px;
-box-shadow:0 8px 20px rgba(0,0,0,0.07);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transform:rotate(-1deg);
 }
 
-.gallery{
-margin-top:45px;
+/* cute cards */
+
+.cards{
+margin-top:50px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 }
 
-.polaroid{
+.card{
 background:white;
-padding:12px 12px 25px;
-border-radius:12px;
+padding:25px;
+border-radius:25px;
+text-align:center;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
-transform:rotate(-2deg);
 transition:.4s;
 }
 
-.polaroid:nth-child(2){
-transform:rotate(2deg);
+.card:hover{
+transform:translateY(-8px);
 }
 
-.polaroid:nth-child(3){
-transform:rotate(-1deg);
-}
-
-.polaroid:hover{
-transform:scale(1.03);
-}
-
-.polaroid img{
-width:100%;
-height:320px;
-object-fit:cover;
-border-radius:8px;
-}
-
-.caption{
-margin-top:12px;
+.card h3{
 font-family:'Caveat',cursive;
-font-size:28px;
-text-align:center;
+font-size:35px;
+margin-bottom:10px;
 }
+
+.card p{
+font-size:15px;
+line-height:1.8;
+}
+
+/* ending */
 
 .end{
-margin-top:60px;
+margin-top:70px;
 text-align:center;
 font-family:'Caveat',cursive;
-font-size:42px;
-padding-bottom:50px;
+font-size:45px;
+padding-bottom:60px;
 }
 
 .small{
-font-size:22px;
+font-size:24px;
 margin-top:10px;
 }
 
@@ -247,11 +241,11 @@ margin-top:10px;
 <span>❤️</span>
 </div>
 
+<!-- LOCK SCREEN -->
+
 <div class="lock-screen" id="lock">
 
 <div class="lock-box">
-
-<img src="r1.jpg">
 
 <h1>Hey Nannaluuu 🫶</h1>
 
@@ -265,41 +259,52 @@ margin-top:10px;
 
 </div>
 
+<!-- MAIN PAGE -->
+
 <div class="main hidden" id="main">
 
 <div class="hero">
+
 <h2>Happy Birthday<br>Nannaluuu ❤️</h2>
 
 <p>for my favourite person forever ♡</p>
+
 </div>
 
 <div class="note">
 
 Happy Birthday nannaluuu❤️❤️ <br><br>
 
-enjoyyy yourrr dayy. <br><br>
+enjoyyy yourrr dayy 💌 <br><br>
 
-always happy that you were always with meee. <br><br>
+always happy that you were always with meee 🫶 <br><br>
 
 anddd yeahh it's your day soo LOVE YOU!!❤️❤️
 
 </div>
 
-<div class="gallery">
+<div class="cards">
 
-<div class="polaroid">
-<img src="r1.jpg">
-<div class="caption">pretty boy ♡</div>
+<div class="card">
+<h3>pretty boy ♡</h3>
+<p>
+you make every day feel softer,
+warmer and happier ✨
+</p>
 </div>
 
-<div class="polaroid">
-<img src="r2.jpg">
-<div class="caption">my favourite view ♡</div>
+<div class="card">
+<h3>my safe place ♡</h3>
+<p>
+thank you for always being with meee 💌
+</p>
 </div>
 
-<div class="polaroid">
-<img src="r3.jpg">
-<div class="caption">brooklyn baby vibes ✨</div>
+<div class="card">
+<h3>brooklyn baby vibes ✨</h3>
+<p>
+yeah my boyfriend pretty cool 😭🫶
+</p>
 </div>
 
 </div>
