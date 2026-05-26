@@ -1,1 +1,379 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nannaluuu ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#f8efe7;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+color:#3d2c2c;
+}
+
+/* floating hearts */
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:1;
+}
+
+.hearts span{
+position:absolute;
+bottom:-100px;
+font-size:22px;
+animation:float 10s linear infinite;
+opacity:.7;
+}
+
+.hearts span:nth-child(1){left:10%;animation-delay:0s;}
+.hearts span:nth-child(2){left:30%;animation-delay:2s;}
+.hearts span:nth-child(3){left:50%;animation-delay:4s;}
+.hearts span:nth-child(4){left:70%;animation-delay:1s;}
+.hearts span:nth-child(5){left:90%;animation-delay:3s;}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+/* lock screen */
+
+.lock-screen{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+position:relative;
+z-index:2;
+}
+
+.lock-box{
+background:rgba(255,255,255,0.6);
+padding:35px;
+border-radius:30px;
+backdrop-filter:blur(10px);
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
+max-width:350px;
+width:100%;
+}
+
+.lock-screen img{
+width:220px;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+margin-bottom:25px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.lock-screen h1{
+font-family:'Caveat',cursive;
+font-size:65px;
+margin-bottom:10px;
+}
+
+.lock-screen p{
+font-size:16px;
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:20px;
+margin-bottom:20px;
+outline:none;
+font-size:18px;
+text-align:center;
+background:#fff;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:40px;
+background:#3d2c2c;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* main page */
+
+.hidden{
+display:none;
+}
+
+.main{
+padding:30px 20px;
+position:relative;
+z-index:2;
+animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero{
+text-align:center;
+margin-bottom:35px;
+}
+
+.hero h2{
+font-family:'Caveat',cursive;
+font-size:70px;
+line-height:1;
+}
+
+.hero p{
+margin-top:10px;
+font-size:17px;
+}
+
+/* scrapbook note */
+
+.note{
+background:#fffaf7;
+padding:30px;
+border-radius:25px;
+max-width:700px;
+margin:0 auto;
+line-height:1.9;
+font-size:18px;
+box-shadow:0 8px 20px rgba(0,0,0,0.07);
+transform:rotate(-1deg);
+}
+
+/* music */
+
+.music{
+margin-top:35px;
+text-align:center;
+}
+
+/* gallery */
+
+.gallery{
+margin-top:45px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.polaroid{
+background:white;
+padding:12px 12px 25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transform:rotate(-2deg);
+transition:.4s;
+}
+
+.polaroid:nth-child(2){
+transform:rotate(2deg);
+}
+
+.polaroid:nth-child(3){
+transform:rotate(-1deg);
+}
+
+.polaroid:hover{
+transform:scale(1.03);
+}
+
+.polaroid img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.caption{
+margin-top:12px;
+font-family:'Caveat',cursive;
+font-size:28px;
+text-align:center;
+}
+
+/* ending */
+
+.end{
+margin-top:60px;
+text-align:center;
+font-family:'Caveat',cursive;
+font-size:42px;
+padding-bottom:50px;
+}
+
+.small{
+font-size:22px;
+margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+<span>❤️</span>
+<span>🤍</span>
+<span>❤️</span>
+<span>🤍</span>
+<span>❤️</span>
+</div>
+
+<!-- LOCK SCREEN -->
+
+<div class="lock-screen" id="lock">
+
+<div class="lock-box">
+
+<img src="1000237407.jpg">
+
+<h1>Hey Nannaluuu 🫶</h1>
+
+<p>something special is waiting for you ♡</p>
+
+<input type="password" id="password" placeholder="enter password">
+
+<button onclick="unlock()">unlock my heart ♡</button>
+
+</div>
+
+</div>
+
+<!-- MAIN PAGE -->
+
+<div class="main hidden" id="main">
+
+<div class="hero">
+<h2>Happy Birthday<br>Nannaluuu ❤️</h2>
+
+<p>for my favourite person forever ♡</p>
+</div>
+
+<div class="note">
+
+Happy Birthday nannaluuu❤️❤️ <br><br>
+
+enjoyyy yourrr dayy. <br><br>
+
+always happy that you were always with meee. <br><br>
+
+anddd yeahh it's your day soo LOVE YOU!!❤️❤️
+
+</div>
+
+<div class="music">
+
+<iframe style="border-radius:20px"
+src="https://open.spotify.com/embed/track/7B62l7MECv7UMekxuxs6rA?utm_source=generator"
+width="100%" height="152"
+frameBorder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+loading="lazy"></iframe>
+
+</div>
+
+<div class="gallery">
+
+<div class="polaroid">
+<img src="1000237407.jpg">
+<div class="caption">pretty boy ♡</div>
+</div>
+
+<div class="polaroid">
+<img src="1000237398.jpg">
+<div class="caption">my favourite view ♡</div>
+</div>
+
+<div class="polaroid">
+<img src="1000232594.jpg">
+<div class="caption">brooklyn baby vibes ✨</div>
+</div>
+
+</div>
+
+<div class="end">
+
+love you endlessly nannaluuu ♡
+
+<div class="small">
+— yours forever 💌
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function unlock(){
+
+let pass = document.getElementById("password").value;
+
+if(pass === "2709"){
+
+document.getElementById("lock").classList.add("hidden");
+
+document.getElementById("main").classList.remove("hidden");
+
+}else{
+
+alert("wrong password baby 🥺");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+```
 
